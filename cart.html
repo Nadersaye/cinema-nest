@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">Netflix Clone</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Popular</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="cart.html" class="active">Cart</a></li> 
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="cart" class="movie-section">
+        <h2>Your Cart</h2>
+        <div id="cart-list" class="movies-grid">
+         
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content" id="footer">
+        <p>Movies Website</p>
+        <p>© 2024 My Company. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com"><i class="fa-brands fa-square-twitter"></i></a>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    function loadCart() {
+        const cart = JSON.parse(localStorage.getItem('movieCart')) || [];
+        const cartList = document.getElementById('cart-list');
+
+        if (cart.length === 0) {
+            cartList.innerHTML = '<p>Your cart is empty.</p>';
+        } else {
+            cartList.innerHTML = ''; 
+            cart.forEach(movie => {
+                const movieElement = document.createElement('div');
+                movieElement.classList.add('movie');
+                
+                movieElement.innerHTML = `
+                    <img src="${movie.poster}" alt="${movie.title}">
+                    <div class="movie-content">
+                        <div class="movie-title">${movie.title}</div>
+                        <button class="fav-button" onclick="removeFromCart('${movie.id}')">Remove</button>
+                    </div>
+                `;
+
+                cartList.appendChild(movieElement);
+            });
+        }
+    }
+
+    function removeFromCart(id) {
+        let cart = JSON.parse(localStorage.getItem('movieCart')) || [];
+        cart = cart.filter(movie => movie.id !== id);
+        localStorage.setItem('movieCart', JSON.stringify(cart));
+
+      
+        loadCart();
+    }
+
+   
+    window.onload = loadCart;
+</script>
+
+</body>
+</html>
