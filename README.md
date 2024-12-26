@@ -1,8 +1,6 @@
-# 🌟 Our First Project in Web Development! 🌟
-
-We are thrilled to share our very first project, developed as part of the ITI Information Technology Institute Full Stack .Net Web Development program! 🎉
-
-## 🎥 Project Title: Movie Store
+## 🎥 cinema nest
+## Description:
+Our Movie Store web application transforms the way users explore and purchase movies. By integrating modern web technologies and APIs, we have created a seamless platform where users can browse through a rich collection of movies, manage their accounts, add movies to their cart, and securely purchase them. The design is both responsive and intuitive, ensuring an exceptional user experience . With features powered by the TMDb API and secure payments through Stripe, our application provides an engaging and safe environment for movie enthusiasts.
 
 ### 🔧 Technologies Used:
 - Firebase
