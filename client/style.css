@@ -1,0 +1,375 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #000, #222);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff9100; /* Netflix red */
+}
+
+header nav ul li a.active {
+    border-bottom: 2px solid orange;
+}
+
+/* Main Content */
+main {
+    padding: 40px;
+}
+
+.movie-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .movies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .movies-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.movie {
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+}
+
+.movie img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: brightness(85%);
+}
+
+.movie:hover img {
+    filter: brightness(70%);
+}
+
+.movie-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.movie-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.movie-overview {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 15px;
+    height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-release {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.movie-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.info-button, .fav-button {
+    background-color:  #ff9100;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.info-button:hover, .fav-button:hover {
+    background-color: #ff9100;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #000, #222);
+    color: #fff;
+    padding: 20px 40px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+footer .footer-content .social-media {
+    display: flex;
+    gap: 15px;
+}
+
+footer .footer-content .social-media a img {
+    width: 35px;
+    height: 35px;
+    filter: invert(1);
+    transition: transform 0.3s;
+}
+
+footer .footer-content .social-media a img:hover {
+    transform: scale(1.2);
+}
+i{
+    color: white;
+}
+.payment-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.payment-button {
+    background-color: orange; /* Optional: Unique style */
+    
+}
+
+.payment-button:hover {
+    background-color:orange;
+}
+/* Movies grid styling */
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.movie {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.movie-title {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.movie:hover {
+    transform: scale(1.05);
+}
+
+/* Overlay styling */
+.movie-overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 300px;
+    pointer-events: none;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+.movie-price {
+    background-color: #ff7f50; /* Orange background color for the price */
+    color: white; /* Text color for the price */
+    font-size: 16px; /* Font size for the price */
+    padding: 8px 16px; /* Padding around the price */
+    border-radius: 25px; /* To make the price appear in a circular shape */
+    display: inline-block; /* To make it align nicely with the title */
+    margin-top: 8px; /* Space between the release date and price */
+}
+
+.movie-price {
+    background-color: #ff7f50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}
+footer {
+    background-color: #222; /* Dark background */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding-top: 30px;
+    line-height: 1.6;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    min-width: 250px;
+}
+
+.footer-logo {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    color: orange;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 2px solid orange;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    color: #ddd;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: orange;
+}
+
+.footer-section form input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.footer-section form button {
+    width: 100%;
+    padding: 8px;
+    background-color: orange;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-section form button:hover {
+    background-color: #ff8800; /* Darker orange */
+}
+
+.social-icons a {
+    font-size: 20px;
+    color: #fff;
+    margin-right: 15px;
+    transition: transform 0.3s ease, color 0.3s;
+}
+
+.social-icons a:hover {
+    color: orange;
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+    color: #aaa;
+    font-size: 13px;
+}
+
+
+/*  */
+/* General Styles */

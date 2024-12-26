@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Popcorn Pick</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="description" content="Free Web tutorials">
+    <!-- <meta http-equiv="refresh" content="10"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <script type="module" src="register.js" defer></script>
+</head>
+
+<body>
+    <div class="logoA">
+        <!-- <header>
+            <a href="PopcornPick" target="_blank">
+                <img src="logo.png" alt="Logo" class="logo">
+            </a>
+            <h1 class="WebTitle">Popcorn Pick</h1>
+        </header> -->
+        <div class="SignUp">
+            <h2>Create Account</h2>
+            <form action="login-in.html" method="POST">
+                <label for="name">First Name:</label>
+                <input type="text" id="f-name" name="name" required>
+                <span class="error" id="f-name-error"></span><br>
+
+                <label for="name">Last Name:</label>
+                <input type="text" id="l-name" name="name" required>
+                <span class="error" id="l-name-error"></span><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error" id="email-error"></span><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <span class="error" id="password-error"></span><br>
+                <p>To verify your email, we will send you an email with a verification link. Standard messaging and data rates may apply</p><br>
+                <span class="error" id="auth-error"></span><br>
+                <button type="submit" id="sign-up">Sign Up</button>
+            </form>
+            <div>
+                <p class="sign-up-link">
+                    Do you have an account? <a href="login-in.html" class="sign-up-link">Sign in</a>
+                </p> 
+                </div>
+        </div>
+    </div>
+    <script src="Index.js"></script>
+</body>
+
+</html>
