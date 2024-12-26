@@ -21,7 +21,7 @@ Our Movie Store web application transforms the way users explore and purchase mo
 This project has been a significant milestone in our web development journey, filled with learning, teamwork, and growth.
 
 ## ✔ Team Members:
-- [nader sayed]
-- [radwa rabee]
-- [zahwa mahmoud]
-- [nada saleh]
+- nader sayed
+- radwa rabee
+- zahwa mahmoud
+- nada saleh
